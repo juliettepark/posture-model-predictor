@@ -2,11 +2,13 @@ from flask import Flask, request, jsonify
 import pickle
 import numpy as np
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the model
-model_filename = 'posture_model.pkl'
+model_filename = 'fourtypes_posture_model.pkl'
 model = pickle.load(open(model_filename, 'rb'))
 
 @app.route('/predict', methods=['POST'])
