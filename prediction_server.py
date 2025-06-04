@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the model
-model_filename = 'fourtypes_posture_model.pkl'
+model_filename = 'retry_fourtypes_posture_model.pkl'
 model = pickle.load(open(model_filename, 'rb'))
 
 @app.route('/predict', methods=['POST'])
